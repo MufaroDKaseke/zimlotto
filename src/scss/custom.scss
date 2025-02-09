@@ -1,0 +1,19 @@
+
+// Import Bootstrap's variables
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+// Override Bootstrap variables
+$primary: #ff5733;
+$secondary: #33c1ff;
+$font-family-base: 'Arial, sans-serif';
+
+// Import Bootstrap to apply the custom variables
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Custom styles
+body {
+  background-color: $secondary;
+  font-family: $font-family-base;
+}
+
