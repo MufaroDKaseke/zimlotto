@@ -1,0 +1,29 @@
+// Color Variables
+$primary-color: #6457a6;
+$secondary-color: #5c2751;
+$accent-color: #e74c3c;
+$background-color: #000000;
+$text-color: #ffffff;
+
+// Font Variables
+$font-family-base: 'Montserrat', 'Poppins', serif;
+$font-size-base: 16px;
+$font-size-large: 20px;
+$font-size-small: 12px;
+
+// Spacing Variables
+$spacing-unit: 8px;
+$spacing-small: $spacing-unit / 2;
+$spacing-medium: $spacing-unit;
+$spacing-large: $spacing-unit * 2;
+
+// Border Variables
+$border-radius: 4px;
+$border-width: 1px;
+$border-color: #bdc3c7;
+
+// Breakpoints
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
