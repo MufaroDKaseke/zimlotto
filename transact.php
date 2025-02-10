@@ -1,3 +1,18 @@
+<?php
+require_once './vendor/autoload.php';
+require_once './includes/config.php';
+require_once './includes/classes/db.class.php';
+require_once './includes/classes/authenticate.class.php';
+require_once './includes/classes/user.class.php';
+require_once './includes/classes/ticket.class.php';
+require_once './includes/classes/transaction.class.php';
+
+$session = new Authenticate();
+$user = new User();
+$ticket = new Ticket();
+$transact = new Transaction();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,8 +76,51 @@
         </div>
       </nav>
       <div class="container mt-4">
-        <h1>Welcome</h1>
-        <p>This is how it's looking</p>
+        <div class="row">
+          <?php
+
+          // Deposit
+          if (isset($_POST['action']) && $_POST['action'] === 'transact_deposit') {
+            if ($transact->deposit($_SESSION['id'], $_POST['amount'], $_POST['method'])) {
+          ?>
+              <div class="alert alert-success d-flex align-items-center" role="alert">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                Deposit successful!
+              </div>
+            <?php
+            } else {
+            ?>
+              <div class="alert alert-danger d-flex align-items-center" role="alert">
+                <i class="bi bi-x-circle-fill me-2"></i>
+                Deposit has failed!
+              </div>
+            <?php
+            }
+          }
+
+          // Withdraw
+          if (isset($_POST['action']) && $_POST['action'] === 'transact_withdraw') {
+            if ($transact->withdraw($_SESSION['id'], $_POST['amount'], $_POST['method'])) {
+            ?>
+              <div class="alert alert-success d-flex align-items-center" role="alert">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                Withdraw successful!
+              </div>
+            <?php
+            } else {
+            ?>
+              <div class="alert alert-danger d-flex align-items-center" role="alert">
+                <i class="bi bi-x-circle-fill me-2"></i>
+                Withdraw has failed!
+              </div>
+          <?php
+            }
+          }
+          ?>
+
+        </div>
+        <h1>Transact</h1>
+        <p>Do all your transactions here</p>
         <div class="row">
           <div class="col-lg-3">
             <div class="card bg-dark text-white rounded-2">
@@ -70,20 +128,22 @@
                 Deposit Money
               </div>
               <div class="card-body p-3">
-                <form>
+                <form action="" method="post">
                   <div class="mb-3">
                     <label for="amount" class="form-label">Amount</label>
-                    <input type="number" class="form-control bg-transparent text-white" id="amount" placeholder="Enter amount">
+                    <input type="number" class="form-control bg-transparent text-white" name="amount" id="amount" placeholder="Enter amount">
                   </div>
                   <div class="mb-3">
                     <label for="method" class="form-label">Method</label>
-                    <select class="form-select bg-transparent text-primary" id="method">
+                    <select class="form-select bg-transparent text-primary" name="method" id="method">
                       <option selected>Choose method</option>
-                      <option value="1">Credit Card</option>
-                      <option value="2">PayPal</option>
-                      <option value="3">Bank Transfer</option>
+                      <option value="Bank Transfer">Bank Transfer</option>
+                      <option value="Ecocash">Ecocash</option>
+                      <option value="Innbucks">Innbucks</option>
+                      <option value="Zipit">Zipit</option>
                     </select>
                   </div>
+                  <input type="hidden" name="action" value="transact_deposit">
                   <button type="submit" class="btn btn-primary fw-semibold">Deposit</button>
                 </form>
               </div>
@@ -95,22 +155,63 @@
                 Withdraw Money
               </div>
               <div class="card-body p-3">
-                <form>
+                <form action="" method="post">
                   <div class="mb-3">
                     <label for="withdraw-amount" class="form-label">Amount</label>
-                    <input type="number" class="form-control bg-transparent text-white" id="withdraw-amount" placeholder="Enter amount">
+                    <input type="number" class="form-control bg-transparent text-white" name="amount" id="withdraw-amount" placeholder="Enter amount">
                   </div>
                   <div class="mb-3">
                     <label for="withdraw-method" class="form-label">Method</label>
-                    <select class="form-select bg-transparent text-primary" id="withdraw-method">
+                    <select class="form-select bg-transparent text-primary" name="method" id="withdraw-method">
                       <option selected>Choose method</option>
-                      <option value="1">Credit Card</option>
-                      <option value="2">PayPal</option>
-                      <option value="3">Bank Transfer</option>
+                      <option value="Bank Transfer">Bank Transfer</option>
+                      <option value="Ecocash">Ecocash</option>
+                      <option value="Innbucks">Innbucks</option>
+                      <option value="Zipit">Zipit</option>
                     </select>
                   </div>
+                  <input type="hidden" name="action" value="transact_withdraw">
                   <button type="submit" class="btn btn-primary fw-semibold">Withdraw</button>
                 </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card bg-dark text-white rounded-2">
+              <div class="card-header px-3">
+                Transactions
+              </div>
+              <div class="card-body p-3">
+                <table class="table table-dark table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Transaction Type</th>
+                      <th scope="col">Mode</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- <tr>
+                      <td>Deposit</td>
+                      <td>Credit Card</td>
+                      <td>$100</td>
+                      <td>2023-10-01</td>
+                    </tr> -->
+                    <?php
+                    foreach ($user->getAllTransactions() as $transaction) {
+                    ?>
+                      <tr>
+                        <td class="text-capitalize"><?= $transaction['type'] ?></td>
+                        <td class="text-capitalize"><?= $transaction['method'] ?></td>
+                        <td><?= $transaction['amount'] ?></td>
+                        <td><?= $transaction['transaction_date'] ?></td>
+                      </tr>
+                    <?php
+                    }
+                    ?>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
