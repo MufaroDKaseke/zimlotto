@@ -1,5 +1,7 @@
-input::placeholder {
-  color: #ffffff;
+.dash-sidebar .nav-link.active, .dash-sidebar .nav-link:hover {
+  font-weight: 600;
+  background: #ffffff;
+  transition: all 0.5s ease-in-out;
 }
 
 /*# sourceMappingURL=style.css.map */

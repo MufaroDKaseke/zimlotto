@@ -8,6 +8,9 @@ $font-family-base: 'Montserrat', serif;
 
 // Import variables and bootstrap
 @import "../../node_modules/bootstrap/scss/variables";
+
+$input-placeholder-color: $white;
+
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Custom styles

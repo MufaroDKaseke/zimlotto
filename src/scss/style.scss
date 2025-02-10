@@ -1,7 +1,19 @@
 @import 'variables';
 
-input {
-  &::placeholder {
-    color: #ffffff;
+// input {
+//   &::placeholder {
+//     color: $white;
+//   }
+// }
+
+.dash {
+  &-sidebar {
+    .nav-link {
+      &.active, &:hover {
+        font-weight: 600;
+        background: $white;
+        transition: all .5s ease-in-out;
+      }
+    }
   }
 }
