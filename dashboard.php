@@ -20,16 +20,22 @@
       <h4 class="p-3 text-center">ZimLotto</h4>
       <ul class="nav flex-column my-4">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Dashboard</a>
+          <a class="nav-link active" href="#"><i class="bi bi-house"></i>Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
+          <a class="nav-link" href="#"><i class="bi bi-ticket-perforated"></i>Bets</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Settings</a>
+          <a class="nav-link" href="#"><i class="bi bi-cash"></i>Deposit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
+          <a class="nav-link" href="#"><i class="bi bi-briefcase"></i>Withdraw</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-gear-wide-connected"></i>Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-box-arrow-right"></i>Logout</a>
         </li>
       </ul>
     </sidebar>

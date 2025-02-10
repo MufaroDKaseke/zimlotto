@@ -8,10 +8,22 @@
 
 .dash {
   &-sidebar {
+    min-width: 200px;
+    max-width: 100%;
     .nav-link {
+      font-family: 'Poppins', serif;
+      color: $white;
+      border-top: 1px solid $primary-color;
+      border-bottom: 1px solid $primary-color;
+
+      > i {
+        margin-right: 5px;
+      }
+
       &.active, &:hover {
         font-weight: 600;
-        background: $white;
+        color: $primary-color;
+        background: darken($color: $white, $amount: 20%);
         transition: all .5s ease-in-out;
       }
     }
