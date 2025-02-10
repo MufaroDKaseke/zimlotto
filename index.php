@@ -17,7 +17,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#">ZimLotto</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -27,17 +27,17 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Play</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="#">Results</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
       </div>
-      <button class="btn btn-primary px-3" type="button">Sign Up</button>
+      <button class="btn btn-primary px-3" type="button" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
     </div>
   </nav>
 
@@ -57,9 +57,9 @@
   </section>
 
   <!-- Login Modal -->
-  <div class="modal bg-black fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal bg-dark fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog h-100 d-flex align-items-center">
-      <div class="modal-content bg-dark">
+      <div class="modal-content bg-black">
         <div class="modal-header">
           <h5 class="modal-title" id="loginModalLabel">Login</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -68,13 +68,44 @@
           <form>
             <div class="mb-3">
               <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control bg-transparent" id="email" aria-describedby="emailHelp">
+              <input type="email" class="form-control text-white bg-transparent" id="email" placeholder="Email Address" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control bg-transparent" id="password">
+              <input type="password" class="form-control text-white bg-transparent" placeholder="Password" id="password">
             </div>
+            <hr class="mx-auto border-primary">
             <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div class="modal bg-dark fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog h-100 d-flex align-items-center">
+      <div class="modal-content bg-black">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="signupEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control bg-transparent" placeholder="Email Address" id="signupEmail" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="signupPassword" class="form-label">Password</label>
+              <input type="password" class="form-control bg-transparent" placeholder="Password" id="signupPassword">
+            </div>
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control bg-transparent" placeholder="Confirm Password" id="confirmPassword">
+            </div>
+            <hr class="mx-auto border-primary">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
           </form>
         </div>
       </div>
