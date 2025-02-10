@@ -96,6 +96,33 @@
             </div>
           </div>
         </div>
+        <div class="row">
+        <div class="col-lg-3">
+          <div class="card bg-dark text-white rounded-2">
+            <div class="card-header px-3">
+              Deposit Money
+            </div>
+            <div class="card-body p-3">
+              <form>
+                <div class="mb-3">
+                  <label for="amount" class="form-label">Amount</label>
+                  <input type="number" class="form-control bg-transparent text-white" id="amount" placeholder="Enter amount">
+                </div>
+                <div class="mb-3">
+                  <label for="method" class="form-label">Method</label>
+                  <select class="form-select bg-transparent text-primary" id="method">
+                    <option selected>Choose method</option>
+                    <option value="1">Credit Card</option>
+                    <option value="2">PayPal</option>
+                    <option value="3">Bank Transfer</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary fw-semibold">Deposit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        </div>
       </div>
     </div>
   </div>
