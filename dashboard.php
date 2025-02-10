@@ -64,8 +64,38 @@
         </div>
       </nav>
       <div class="container mt-4">
-        <h1>Main Content</h1>
-        <p>This is the main body section.</p>
+        <h1>Welcome</h1>
+        <p>This is how it's looking</p>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card dash-home-card bg-primary text-white rounded p-3">
+              <h2 class="fw-bolder">30</h2>
+              <hr>
+              <h4 class="fw-semibold">Bets</h4>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card dash-home-card bg-success text-white rounded p-3">
+              <h2 class="fw-bolder">30</h2>
+              <hr>
+              <h4 class="fw-semibold">Bets</h4>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card dash-home-card bg-warning text-white rounded p-3">
+              <h2 class="fw-bolder">30</h2>
+              <hr>
+              <h4 class="fw-semibold">Bets</h4>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card dash-home-card bg-danger text-white rounded p-3">
+              <h2 class="fw-bolder">30</h2>
+              <hr>
+              <h4 class="fw-semibold">Bets</h4>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
