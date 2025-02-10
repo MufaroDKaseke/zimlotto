@@ -65,16 +65,17 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form action="./includes/tests/authenticate.test.php" method="post">
             <div class="mb-3">
-              <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control text-white bg-transparent" id="email" placeholder="Email Address" aria-describedby="emailHelp">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" name="username" class="form-control text-white bg-transparent" id="username" placeholder="Username" aria-describedby="usernameHelp">
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control text-white bg-transparent" placeholder="Password" id="password">
+              <input type="password" name="password" class="form-control text-white bg-transparent" placeholder="Password" id="password">
             </div>
             <hr class="mx-auto border-primary">
+            <input type="hidden" name="action" value="login">
             <button type="submit" class="btn btn-primary">Login</button>
           </form>
         </div>
