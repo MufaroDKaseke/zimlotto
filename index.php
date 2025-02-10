@@ -65,7 +65,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="./includes/tests/authenticate.test.php" method="post">
+          <form action="./dashboard.php" method="post">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" name="username" class="form-control text-white bg-transparent" id="username" placeholder="Username" aria-describedby="usernameHelp">

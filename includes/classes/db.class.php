@@ -9,12 +9,16 @@ class Database {
   public $db_conn;
 
   public function __construct() {
+    $this->db_host = $_ENV["DB_HOST"];
+    $this->db_username = $_ENV["DB_USERNAME"];
+    $this->db_password = $_ENV["DB_PASSWORD"];
+    $this->db_name = $_ENV["DB_NAME"];
   }
 
   // Connect Database
   public function connect() {
     // Create connection
-    $this->db_conn = mysqli_connect($_ENV["DB_HOST"], $_ENV['DB_USERNAME'], $_ENV["DB_PASSWORD"], $_ENV["DB_NAME"]);
+    $this->db_conn = mysqli_connect($this->db_host, $this->db_username, $this->db_password, $this->db_name);
     // Check connection
     if (!$this->db_conn) {
       die("Connection failed: " . mysqli_connect_error());

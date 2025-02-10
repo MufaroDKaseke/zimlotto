@@ -1,15 +1,3 @@
-<?php
-require_once './vendor/autoload.php';
-require_once './includes/config.php';
-require_once './includes/classes/db.class.php';
-require_once './includes/classes/authenticate.class.php';
-require_once './includes/classes/user.class.php';
-require_once './includes/classes/ticket.class.php';
-
-$session = new Authenticate();
-$user = new User();
-$ticket = new Ticket();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,36 +64,6 @@ $ticket = new Ticket();
         <h1>Welcome</h1>
         <p>This is how it's looking</p>
         <div class="row">
-          <div class="col-md-3">
-            <div class="card dash-home-card bg-primary text-white rounded p-3">
-              <h2 class="fw-bolder">30</h2>
-              <hr>
-              <h4 class="fw-semibold">Bets</h4>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card dash-home-card bg-success text-white rounded p-3">
-              <h2 class="fw-bolder">30</h2>
-              <hr>
-              <h4 class="fw-semibold">Bets</h4>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card dash-home-card bg-warning text-white rounded p-3">
-              <h2 class="fw-bolder">30</h2>
-              <hr>
-              <h4 class="fw-semibold">Bets</h4>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card dash-home-card bg-danger text-white rounded p-3">
-              <h2 class="fw-bolder">30</h2>
-              <hr>
-              <h4 class="fw-semibold">Bets</h4>
-            </div>
-          </div>
-        </div>
-        <div class="row">
           <div class="col-lg-3">
             <div class="card bg-dark text-white rounded-2">
               <div class="card-header px-3">
@@ -127,6 +85,31 @@ $ticket = new Ticket();
                     </select>
                   </div>
                   <button type="submit" class="btn btn-primary fw-semibold">Deposit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card bg-dark text-white rounded-2">
+              <div class="card-header px-3">
+                Withdraw Money
+              </div>
+              <div class="card-body p-3">
+                <form>
+                  <div class="mb-3">
+                    <label for="withdraw-amount" class="form-label">Amount</label>
+                    <input type="number" class="form-control bg-transparent text-white" id="withdraw-amount" placeholder="Enter amount">
+                  </div>
+                  <div class="mb-3">
+                    <label for="withdraw-method" class="form-label">Method</label>
+                    <select class="form-select bg-transparent text-primary" id="withdraw-method">
+                      <option selected>Choose method</option>
+                      <option value="1">Credit Card</option>
+                      <option value="2">PayPal</option>
+                      <option value="3">Bank Transfer</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary fw-semibold">Withdraw</button>
                 </form>
               </div>
             </div>
