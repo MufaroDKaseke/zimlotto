@@ -32,6 +32,9 @@ class Authenticate extends Database {
       $_SESSION['id'] = $user['id'];
       $_SESSION['username'] = $user['username'];
       $_SESSION['email'] = $user['email'];
+      $_SESSION['fullname'] = $user['fullname'];
+      $_SESSION['age'] = $user['age'];
+
       // Redirect or perform other actions after successful login
     } else {
       // Handle login error

@@ -27,13 +27,13 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Play</a>
+            <a class="nav-link" href="./tickets.php">Play</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Results</a>
+            <a class="nav-link" href="./results.php">Results</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="./transact.php">Transact</a>
           </li>
         </ul>
       </div>
@@ -92,22 +92,34 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="signupEmail" class="form-label">Email address</label>
-              <input type="email" class="form-control bg-transparent" placeholder="Email Address" id="signupEmail" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label for="signupPassword" class="form-label">Password</label>
-              <input type="password" class="form-control bg-transparent" placeholder="Password" id="signupPassword">
-            </div>
-            <div class="mb-3">
-              <label for="confirmPassword" class="form-label">Confirm Password</label>
-              <input type="password" class="form-control bg-transparent" placeholder="Confirm Password" id="confirmPassword">
-            </div>
-            <hr class="mx-auto border-primary">
-            <button type="submit" class="btn btn-primary">Sign Up</button>
-          </form>
+            <form>
+              <div class="mb-3">
+                <label for="signupEmail" class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control bg-transparent" placeholder="Email Address" id="signupEmail" aria-describedby="emailHelp" required>
+              </div>
+              <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" name="full_name" class="form-control bg-transparent" placeholder="Full Name" id="fullName" required>
+              </div>
+              <div class="mb-3">
+                <label for="signupUsername" class="form-label">Username</label>
+                <input type="text" name="username" class="form-control bg-transparent" placeholder="Username" id="signupUsername" required>
+              </div>
+              <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" name="age" class="form-control bg-transparent" placeholder="Age" id="age" min="18" required>
+              </div>
+              <div class="mb-3">
+                <label for="signupPassword" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control bg-transparent" placeholder="Password" id="signupPassword" minlength="6" required>
+              </div>
+              <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" name="confirm_password" class="form-control bg-transparent" placeholder="Confirm Password" id="confirmPassword" minlength="6" required>
+              </div>
+              <hr class="mx-auto border-primary">
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
         </div>
       </div>
     </div>

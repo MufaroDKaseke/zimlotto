@@ -39,7 +39,7 @@ $ticket = new Ticket();
           <a class="nav-link active" href="./tickets.php"><i class="bi bi-ticket-perforated"></i>Tickets</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="./results.php"><i class="bi bi-bar-chart"></i>Results</a>
+          <a class="nav-link" href="./results.php"><i class="bi bi-bar-chart"></i>Results</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./transact.php"><i class="bi bi-cash"></i>Transact</a>
@@ -99,8 +99,19 @@ $ticket = new Ticket();
           }
           ?>
         </div>
-        <h1>Tickets</h1>
-        <p>Here are tickets...</p>
+        <div class="row justify-content-between">
+          <div class="col">
+            <h1>Tickets</h1>
+            <p>These are your tickets...</p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="d-grid">
+              <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#purchaseTicketModal">
+                Purchase Ticket
+              </button>
+            </div>
+          </div>
+        </div>
         <div class="row">
           <!-- <div class="col-md-4 mb-4">
             <div class="card bg-dark text-white">
@@ -148,13 +159,7 @@ $ticket = new Ticket();
           }
           ?>
           <!-- End Of All Tickets -->
-          <div class="col-md-4 mb-4">
-            <div class="d-grid">
-              <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#purchaseTicketModal">
-                Purchase Ticket
-              </button>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
@@ -179,28 +184,28 @@ $ticket = new Ticket();
               <label for="numbers" class="form-label">Numbers</label>
               <div class="row">
                 <div class="col">
-                  <input type="number" class="form-control text-white bg-transparent" name="num_1" id="num_1" placeholder="0" required>
+                  <input type="number" class="form-control text-white bg-transparent" name="num_1" id="num_1" placeholder="0" min="1" max="49" required>
                 </div>
                 <div class="col">
-                  <input type="number" class="form-control text-white bg-transparent" name="num_2" id="num_2" placeholder="0" required>
+                  <input type="number" class="form-control text-white bg-transparent" name="num_2" id="num_2" placeholder="0" min="1" max="49" required>
                 </div>
                 <div class="col">
-                  <input type="number" class="form-control text-white bg-transparent" name="num_3" id="num_3" placeholder="0" required>
+                  <input type="number" class="form-control text-white bg-transparent" name="num_3" id="num_3" placeholder="0" min="1" max="49" required>
                 </div>
                 <div class="col">
-                  <input type="number" class="form-control text-white bg-transparent" name="num_4" id="num_4" placeholder="0" required>
+                  <input type="number" class="form-control text-white bg-transparent" name="num_4" id="num_4" placeholder="0" min="1" max="49" required>
                 </div>
                 <div class="col">
-                  <input type="number" class="form-control text-white bg-transparent" name="num_5" id="num_5" placeholder="0" required>
+                  <input type="number" class="form-control text-white bg-transparent" name="num_5" id="num_5" placeholder="0" min="1" max="49" required>
                 </div>
                 <div class="col">
-                  <input type="number" class="form-control text-white bg-transparent" name="num_6" id="num_6" placeholder="0" required>
+                  <input type="number" class="form-control text-white bg-transparent" name="num_6" id="num_6" placeholder="0" min="1" max="49" required>
                 </div>
               </div>
             </div>
             <div class="mb-3">
               <label for="price" class="form-label">Price</label>
-              <input type="number" class="form-control text-white bg-transparent" name="price" id="price" step="0.01" required>
+              <input type="number" class="form-control text-white bg-transparent" name="price" id="price" step="0.5" value="2.00" required>
             </div>
             <div class="mb-3">
               <label for="status" class="form-label">Status</label>

@@ -94,6 +94,18 @@ $results = new Results();
                   <p class="card-text">@<?= $_SESSION['username'] ?></p>
                 </div>
                 <div class="d-flex justify-content-between">
+                  <p class="card-text"><strong>Full Name:</strong></p>
+                  <p class="card-text"><?= $_SESSION['fullname'] ?></p>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="card-text"><strong>Email:</strong></p>
+                  <p class="card-text"><?= $_SESSION['email'] ?></p>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="card-text"><strong>Age:</strong></p>
+                  <p class="card-text"><?= $_SESSION['age'] ?></p>
+                </div>
+                <div class="d-flex justify-content-between">
                   <p class="card-text"><strong>Balance:</strong></p>
                   <p class="card-text">US$ <?= $user->getUserBalance() ?></p>
                 </div>
