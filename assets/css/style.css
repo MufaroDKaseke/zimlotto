@@ -18,4 +18,16 @@
   transition: all 0.5s ease-in-out;
 }
 
+.lotto-ball {
+  width: 50px;
+  height: 50px;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=style.css.map */

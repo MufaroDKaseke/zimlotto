@@ -34,7 +34,7 @@ $results = new Results();
       <h4 class="p-3 text-center">ZimLotto</h4>
       <ul class="nav flex-column my-4">
         <li class="nav-item">
-          <a class="nav-link active" href="./dashboard.php"><i class="bi bi-house"></i>Dashboard</a>
+          <a class="nav-link" href="./dashboard.php"><i class="bi bi-house"></i>Dashboard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./tickets.php"><i class="bi bi-ticket-perforated"></i>Tickets</a>
@@ -46,7 +46,7 @@ $results = new Results();
           <a class="nav-link" href="./transact.php"><i class="bi bi-cash"></i>Transact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./settings.php"><i class="bi bi-gear-wide-connected"></i>Settings</a>
+          <a class="nav-link active" href="./settings.php"><i class="bi bi-gear-wide-connected"></i>Settings</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./logout.php"><i class="bi bi-box-arrow-right"></i>Logout</a>
@@ -78,86 +78,32 @@ $results = new Results();
         </div>
       </nav>
       <div class="container mt-4">
-        <h1>Welcome</h1>
-        <p>This is how your account is looking!</p>
-        <div class="row mb-3">
-          <div class="col-md-3">
-            <div class="card dash-home-card bg-primary text-white rounded p-3">
-              <h2 class="fw-bolder"><?= $user->getNumberOfTickets() ?></h2>
-              <hr>
-              <h4 class="fw-semibold">Tickets</h4>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card dash-home-card bg-warning text-white rounded p-3">
-              <h2 class="fw-bolder"><?= $user->getNumberOfWonTickets() ?></h2>
-              <hr>
-              <h4 class="fw-semibold">Won</h4>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card dash-home-card bg-danger text-white rounded p-3">
-              <h2 class="fw-bolder"><?= $user->getNumberOfLostTickets() ?></h2>
-              <hr>
-              <h4 class="fw-semibold">Lost</h4>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card dash-home-card bg-success text-white rounded p-3">
-              <h2 class="fw-bolder">US$ <?= $user->getUserBalance() ?></h2>
-              <hr>
-              <h4 class="fw-semibold">Account Balance</h4>
-            </div>
-          </div>
-        </div>
+        <h1>Settings</h1>
+        <p>These are your account details!</p>
         <div class="row">
-          <div class="col-md-6">
-            <div class="card dash-home-card text-dark bg-white rounded p-3">
-              <div class="card-header bg-primary text-white">
-              <h2 class="fw-bolder">How to Play 🎲</h2>
-              </div>
+          <div class="col-md-4">
+            <div class="card bg-dark text-white">
               <div class="card-body">
-              <ol class="fw-semibold">
-                <li>Select your numbers 🎯</li>
-                <li>Choose your draw date 📅</li>
-                <li>Purchase your ticket 💳</li>
-                <li>Wait for the draw 🕒</li>
-                <li>Check the results 🏆</li>
-              </ol>
-              <a href="./tickets.php" class="btn btn-primary mt-3 fw-bold">Play Now 🎟️</a>
+                <h5 class="card-title">User Details</h5>
+                <div class="d-flex justify-content-between">
+                  <p class="card-text"><strong>ID:</strong></p>
+                  <p class="card-text"><?= $_SESSION['id'] ?></p>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="card-text"><strong>Username:</strong></p>
+                  <p class="card-text">@<?= $_SESSION['username'] ?></p>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="card-text"><strong>Balance:</strong></p>
+                  <p class="card-text">US$ <?= $user->getUserBalance() ?></p>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="card-text"><strong>Password:</strong></p>
+                  <p class="card-text">********</p>
+                </div>
               </div>
             </div>
           </div>
-            <div class="col-md-6">
-            <div class="card dash-home-card text-dark bg-white rounded p-3">
-              <div class="card-header bg-success text-white">
-              <h2 class="fw-bolder">Top 5 Winners 🏆</h2>
-              </div>
-              <div class="card-body">
-                <table class="table table-striped">
-                <thead>
-                  <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Winner</th>
-                  <th scope="col">Prize</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                  $topWinners = $results->getTopWinners(5);
-                  foreach ($topWinners as $index => $winner) {
-                  echo "<tr>";
-                  echo "<th scope='row'>" . ($index + 1) . "</th>";
-                  echo "<td>{$winner}</td>";
-                  echo "<td>US$ 10,000</td>";
-                  echo "</tr>";
-                  }
-                  ?>
-                </tbody>
-                </table>
-              </div>
-            </div>
-            </div>
         </div>
       </div>
     </div>

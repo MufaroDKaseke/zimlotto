@@ -1,6 +1,7 @@
 <?php
 class Transaction extends Database {
 
+  // Deposit funds to user's account
   public function deposit($userId = null, $amount, $method) {
     $this->connect();
     if (is_null($userId)) {
@@ -23,6 +24,7 @@ class Transaction extends Database {
     return $transaction_id;
   }
 
+  // Withdraw funds from user's accounts
   public function withdraw($userId = null, $amount, $method) {
     $this->connect();
     if (is_null($userId)) {
